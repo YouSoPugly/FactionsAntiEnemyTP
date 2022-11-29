@@ -1,0 +1,6 @@
+name: FactionsAntiEnemyTeleport
+version: '${project.version}'
+main: xyz.pugly.factionsantienemyteleport.FactionsAntiEnemyTeleport
+api-version: 1.19
+depend: [ Factions ]
+description: Stops players from teleporting into an enemy territory
