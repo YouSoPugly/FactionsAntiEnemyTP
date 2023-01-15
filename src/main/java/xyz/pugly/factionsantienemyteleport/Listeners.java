@@ -17,7 +17,7 @@ public class Listeners implements Listener {
     public void onPlayerTeleport(PlayerTeleportEvent event) {
         if (event.getTo() == null) return;
 
-        if (!(event.getCause().equals(PlayerTeleportEvent.TeleportCause.PLUGIN) || event.getCause().equals(PlayerTeleportEvent.TeleportCause.COMMAND))) {
+        if (!(event.getCause().equals(PlayerTeleportEvent.TeleportCause.CHORUS_FRUIT))) {
             return;
         }
 
@@ -37,9 +37,9 @@ public class Listeners implements Listener {
 
         Relation relation = fac.getRelationTo(toFac);
 
-        if (relation.isEnemy()) {
+        if (!relation.isMember()) {
             event.setCancelled(true);
-            p.sendMessage("§cYou cannot teleport to enemy territory!");
+            p.sendMessage("§cYou cannot chorus fruit into other player's land!");
         }
     }
 
